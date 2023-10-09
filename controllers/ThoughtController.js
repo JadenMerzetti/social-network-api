@@ -7,7 +7,7 @@ module.exports = {
             console.log(thoughts)
             res.json(thoughts);
         } catch (err) {
-            res.status(500).json({message: 'Uh oh, no thoughts in this head!'});
+            res.status(500).json({message: 'No thoughts to display!'});
         }
     },
 
@@ -18,7 +18,7 @@ module.exports = {
 
             if (!thought) {
                 return res.status(404).json(
-                    { message: 'Uh oh, no thought in this head!' });
+                    { message: 'No thoughts to display!' });
             }
             res.json(thought);
         } catch (err) {
@@ -37,7 +37,7 @@ module.exports = {
 
             if (!user) {
                 return res.status(404).json(
-                    { message: 'Uh oh, no user found with this id!' });
+                    { message: 'No user found!' });
             }
 
             res.json(thought);
@@ -53,7 +53,7 @@ module.exports = {
                 req.body, { new: true });
 
             if (!thought) {
-                return res.status(404).json({ message: 'Uh oh, no thought in this head!' });
+                return res.status(404).json({ message: 'No thoughts to display' });
             }
             res.json(thought);
         } catch (err) {
@@ -67,7 +67,7 @@ module.exports = {
                 { _id: req.params.thoughtId }, req.body, { new: true });
 
             if (!thought) {
-                return res.status(404).json({ message: 'Uh oh, no thought in this head!' });
+                return res.status(404).json({ message: 'No thoughts to display' });
             }
             res.json(thought);
         } catch (err) {
@@ -84,7 +84,7 @@ module.exports = {
             );
 
             if (!thought) {
-                return res.status(404).json({ message: 'Uh oh, no thought in this head!' });
+                return res.status(404).json({ message: 'No thoughts to display!' });
             }
             res.json(thought);
         } catch (err) {
@@ -101,7 +101,7 @@ module.exports = {
             );
 
             if (!thought) {
-                return res.status(404).json({ message: 'Uh oh, no thought in this head!' });
+                return res.status(404).json({ message: 'No thoughts to display' });
             }
             res.json(thought);
         } catch (err) {
